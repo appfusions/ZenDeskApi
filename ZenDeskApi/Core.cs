@@ -8,7 +8,6 @@ using System.Xml;
 using RestSharp;
 using RestSharp.Contrib;
 using ZenDeskApi.JsonSerializers;
-using ZenDeskApi.Model;
 using ZenDeskApi.XmlSerializers;
 
 

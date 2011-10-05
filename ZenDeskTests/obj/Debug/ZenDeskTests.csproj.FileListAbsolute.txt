@@ -10,3 +10,13 @@ C:\Users\ericn\Documents\Visual Studio 2010\Projects\ZenDeskApi\ZenDeskTests\obj
 C:\Users\ericn\Documents\Visual Studio 2010\Projects\ZenDeskApi\ZenDeskTests\obj\Debug\ZenDeskTests.pdb
 C:\Users\ericn\Documents\Visual Studio 2010\Projects\ZenDeskApi\ZenDeskTests\bin\Debug\Newtonsoft.Json.Net35.dll
 C:\Users\ericn\Documents\Visual Studio 2010\Projects\ZenDeskApi\ZenDeskTests\bin\Debug\QDFeedParser.dll
+D:\Dev\appfusions\equinox\ZenDeskApi\ZenDeskTests\bin\Debug\ZenDeskTests.dll
+D:\Dev\appfusions\equinox\ZenDeskApi\ZenDeskTests\bin\Debug\ZenDeskTests.pdb
+D:\Dev\appfusions\equinox\ZenDeskApi\ZenDeskTests\bin\Debug\QDFeedParser.dll
+D:\Dev\appfusions\equinox\ZenDeskApi\ZenDeskTests\bin\Debug\RestSharp.dll
+D:\Dev\appfusions\equinox\ZenDeskApi\ZenDeskTests\bin\Debug\ZenDeskApi.dll
+D:\Dev\appfusions\equinox\ZenDeskApi\ZenDeskTests\bin\Debug\Newtonsoft.Json.Net35.dll
+D:\Dev\appfusions\equinox\ZenDeskApi\ZenDeskTests\bin\Debug\ZenDeskApi.pdb
+D:\Dev\appfusions\equinox\ZenDeskApi\ZenDeskTests\obj\Debug\ResolveAssemblyReference.cache
+D:\Dev\appfusions\equinox\ZenDeskApi\ZenDeskTests\obj\Debug\ZenDeskTests.dll
+D:\Dev\appfusions\equinox\ZenDeskApi\ZenDeskTests\obj\Debug\ZenDeskTests.pdb

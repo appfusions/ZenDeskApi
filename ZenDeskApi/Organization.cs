@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using RestSharp;
 using ZenDeskApi.Model;
 
@@ -11,12 +9,12 @@ namespace ZenDeskApi
     {
         private string _organizations = "organizations";
 
-        public List<Organization> GetOgranizations()
+        public List<Organization> GetOrganizations()
         {
             return GetCollection<Organization>(_organizations);
         } 
 
-        public Organization GetOgranizationById(int id)
+        public Organization GetOrganizationById(int id)
         {
             var request = new ZenRestRequest
             {
@@ -34,7 +32,7 @@ namespace ZenDeskApi
 
         public int CreateOrUpdateOrganization(Organization newOrg)
         {
-            var orgs = GetOgranizations();
+            var orgs = GetOrganizations();
             var curOrg = orgs.Where(x => x.Name == newOrg.Name);
 
             if (curOrg.Count() > 0)

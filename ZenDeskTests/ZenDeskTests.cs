@@ -187,11 +187,11 @@ namespace ZenDeskTests
 
         //    Assert.Greater(id, 0);
 
-        //    var org = _api.GetOgranizationById(id);
+        //    var org = _api.GetOrganizationById(id);
         //    org.Default = "www.yahoo.com";
         //    _api.CreateOrUpdateOrganization(org);
 
-        //    Assert.AreEqual(_api.GetOgranizationById(id).Default, org.Default);
+        //    Assert.AreEqual(_api.GetOrganizationById(id).Default, org.Default);
 
         //    Assert.True(_api.DestroyOrganization(id));
         //}
@@ -278,12 +278,12 @@ namespace ZenDeskTests
         [Test]
         public void CanGetOrganizations()
         {
-            var orgs2 = _api.GetOgranizationById(471690);
+            var orgs2 = _api.GetOrganizationById(471690);
 
-            var orgs = _api.GetOgranizations();
+            var orgs = _api.GetOrganizations();
             Assert.Greater(orgs.Count, 0);
 
-            var org = _api.GetOgranizationById(orgs.First().Id);
+            var org = _api.GetOrganizationById(orgs.First().Id);
             Assert.Greater(org.Id, 0);
         }
         
