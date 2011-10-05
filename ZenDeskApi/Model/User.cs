@@ -60,7 +60,7 @@ namespace ZenDeskApi.Model
         [ZenDeskSerialization(Name = "roles")]
         public int? Role { get; set; }
 
-        [ZenDeskSerialization(Name = "organization-id", Skip = true)]
+        [ZenDeskSerialization(Name = "organization-id")]
         public int? OrganizationId { get; set; }
 
         [ZenDeskSerialization(Name = "groups", Skip = true)]
