@@ -18,9 +18,41 @@ namespace ZenDeskApi
 
         public List<User> GetUsers()
         {
-            return GetCollection<User>(Users); 
+            var users = new List<User>();
+
+            try
+            {
+                int page = 1;
+                var pageOfUsers = new List<User>();
+
+                //Try getting the tickets for all of the pages
+                while (page == 1 || pageOfUsers.Count > 0)
+                {
+                    pageOfUsers = GetUsersByPage(page);
+                    users.AddRange(pageOfUsers);
+
+                    page++;
+                }
+            }
+            //There were no more pages so just go on
+            catch (ArgumentNullException ex)
+            { }
+
+            return users;    
         }
 
+        private List<User> GetUsersByPage(int page)
+        {
+            var request = new ZenRestRequest
+            {
+                Method = Method.GET,
+                Resource = string.Format("{0}.xml", Users)
+            };
+
+            request.AddParameter("page", page.ToString());
+
+            return Execute<List<User>>(request);          
+        }
 
         public User GetUserById(int id)
         {
