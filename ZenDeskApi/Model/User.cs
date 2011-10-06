@@ -36,7 +36,7 @@ namespace ZenDeskApi.Model
         [ZenDeskSerialization(Name = "email")]
         public string Email { get; set; }
 
-        [ZenDeskSerialization(Name = "external-id", Skip = true)]
+        [ZenDeskSerialization(Name = "external-id")]
         public string ExternalId { get; set; }
 
         [ZenDeskSerialization(Name = "restriction-id")]
