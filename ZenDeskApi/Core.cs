@@ -156,6 +156,17 @@ namespace ZenDeskApi
 
                 throw new ZenDeskNotAcceptableInputException(error);
             }
+            
+            if(response.StatusCode == System.Net.HttpStatusCode.ServiceUnavailable)
+            {
+                throw new ZenDeskApiRateLimitException("Zendesk unavailable, most probably due to API Rate Limit");
+            }
+
+            if (response.StatusCode != System.Net.HttpStatusCode.OK &&
+                response.StatusCode != System.Net.HttpStatusCode.Created)
+            {
+                throw new ZenDeskHttpResponseException("Zendesk responded with HTTP code " + response.StatusCode.ToString());
+            }
         }
 
         private int GetIdFromLocationHeader(RestResponse res)
@@ -205,6 +216,20 @@ namespace ZenDeskApi
     public class ZenDeskNotAcceptableInputException : Exception
     {
         public ZenDeskNotAcceptableInputException(string message) : base(message)
+        { }
+    }
+
+    public class ZenDeskApiRateLimitException : Exception
+    {
+        public ZenDeskApiRateLimitException(string message)
+            : base(message)
+        { }
+    }
+
+    public class ZenDeskHttpResponseException : Exception
+    {
+        public ZenDeskHttpResponseException(string message)
+            : base(message)
         { }
     }
 }

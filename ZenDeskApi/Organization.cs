@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using RestSharp;
 using ZenDeskApi.Model;
@@ -11,8 +12,41 @@ namespace ZenDeskApi
 
         public List<Organization> GetOrganizations()
         {
-            return GetCollection<Organization>(_organizations);
-        } 
+            var organizations = new List<Organization>();
+
+            try
+            {
+                var page = 1;
+                var pageOfOrgs = new List<Organization>();
+
+                //Try getting the tickets for all of the pages
+                while (page == 1 || pageOfOrgs.Count > 0)
+                {
+                    pageOfOrgs = GetOrganizationssByPage(page);
+                    organizations.AddRange(pageOfOrgs);
+
+                    page++;
+                }
+            }
+            //There were no more pages so just go on
+            catch (ArgumentNullException ex)
+            { }
+
+            return organizations;
+        }
+
+        private List<Organization> GetOrganizationssByPage(int page)
+        {
+            var request = new ZenRestRequest
+            {
+                Method = Method.GET,
+                Resource = string.Format("{0}.xml", _organizations)
+            };
+
+            request.AddParameter("page", page.ToString());
+
+            return Execute<List<Organization>>(request);
+        }
 
         public Organization GetOrganizationById(int id)
         {
